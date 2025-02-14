@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Love for You</title>
+    <style>
+        body {
+            background-color: #ffdde1;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+        h1 {
+            font-size: 3em;
+            color: #d63384;
+            animation: fadeIn 2s ease-in-out;
+        }
+        p {
+            font-size: 1.5em;
+            color: #6a0572;
+            animation: fadeIn 4s ease-in-out;
+        }
+        .heart {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            animation: heartbeat 1.5s infinite;
+        }
+        .heart:before,
+        .heart:after {
+            content: '';
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            border-radius: 50%;
+            position: absolute;
+        }
+        .heart:before {
+            top: -50px;
+            left: 0;
+        }
+        .heart:after {
+            left: 50px;
+            top: 0;
+        }
+        @keyframes heartbeat {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); }
+            50% { transform: translate(-50%, -50%) scale(1.2); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .button {
+            margin-top: 30px;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            color: white;
+            background-color: #ff4081;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            animation: fadeIn 5s ease-in-out;
+        }
+        .hidden-message {
+            display: none;
+            font-size: 2em;
+            color: #d63384;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>To My Love ❤️</h1>
+        <p>You are my heart, my soul, my everything.</p>
+        <div class="heart"></div>
+        <button class="button" onclick="showMessage()">Click for a Surprise</button>
+        <p class="hidden-message" id="message">Will You Marry Me? 💍</p>
+    </div>
+    <script>
+        function showMessage() {
+            document.getElementById('message').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
